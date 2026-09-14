@@ -39,3 +39,40 @@ Gesture prediction (Hi / Thanks / No)
 ## Setup
 
 Install dependencies:
+
+pip install opencv-python mediapipe numpy scikit-learn
+
+
+## Usage
+
+**Data collection:**
+
+python collectdata.py
+- Press `h` to collect the **Hi** gesture
+- Press `t` to collect the **Thanks** gesture
+- Press `n` to collect the **No** gesture
+- Press `r` to restart the current sequence
+- Press `q` to quit
+
+**Training:**
+python trainmodel.py
+
+## Motivation
+
+Gesture-based interaction is a practical accessibility tool. HandTalk explores whether a lightweight, low-dependency pipeline (OpenCV + MediaPipe + scikit-learn) can recognize a small vocabulary of gestures in real time without specialized hardware.
+
+## Limitations
+
+- Currently supports only three gestures
+- Tested on a small self-collected dataset; out-of-distribution performance is untested
+- Real-time accuracy depends on lighting and camera quality
+
+## Future Improvements
+
+- Expand gesture vocabulary to the full alphabet or common phrases
+- Add temporal modeling (LSTM / 1D CNN over landmark sequences) for dynamic gestures
+- Evaluate against a public dataset for comparability
+
+---
+
+**Built with Python + OpenCV + MediaPipe**
